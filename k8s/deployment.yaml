@@ -50,3 +50,10 @@ spec:
   ports:
     - port: 5000
       nodePort: 30530
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cfm-portal-flask
+data:
+  PORTAL_IMAGE: "3"
