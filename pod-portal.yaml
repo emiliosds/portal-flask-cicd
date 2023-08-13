@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-portal-flask
+  labels:
+    app: portal-flask
+spec:
+  containers:
+    - name: porta-flask
+      image: emiliosds/portal-flask:varenv
+      ports:
+        - containerPort: 5000
