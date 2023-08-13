@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: cfm-portal-flask
 data:
-  PORTAL_IMAGE: "2"
+  PORTAL_IMAGE: "3"
