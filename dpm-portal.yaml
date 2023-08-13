@@ -1,40 +1,40 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: dpm-portal-flask
-spec:
-  template:
-    metadata:
-      name: pod-portal-flask
-      labels:
-        app: pod-portal-flask
-    spec:
-      containers:
-        - name: portal-flask
-          image: emiliosds/portal-flask:alpine
-          ports:
-            - containerPort: 5000
-          envFrom:
-            - configMapRef:
-                name: cfm-portal-flask
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 5000
-            periodSeconds: 10
-            failureThreshold: 3
-            initialDelaySeconds: 20
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 5000
-            periodSeconds: 10
-            failureThreshold: 5
-            initialDelaySeconds: 3
-          resources:
-            requests:
-              cpu: 500m
-  replicas: 2
-  selector:
-    matchLabels:
-      app: pod-portal-flask
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: dpm-portal-flask
+# spec:
+#   template:
+#     metadata:
+#       name: pod-portal-flask
+#       labels:
+#         app: pod-portal-flask
+#     spec:
+#       containers:
+#         - name: portal-flask
+#           image: emiliosds/portal-flask:alpine
+#           ports:
+#             - containerPort: 5000
+#           envFrom:
+#             - configMapRef:
+#                 name: cfm-portal-flask
+#           livenessProbe:
+#             httpGet:
+#               path: /
+#               port: 5000
+#             periodSeconds: 10
+#             failureThreshold: 3
+#             initialDelaySeconds: 20
+#           readinessProbe:
+#             httpGet:
+#               path: /
+#               port: 5000
+#             periodSeconds: 10
+#             failureThreshold: 5
+#             initialDelaySeconds: 3
+#           resources:
+#             requests:
+#               cpu: 500m
+#   replicas: 2
+#   selector:
+#     matchLabels:
+#       app: pod-portal-flask
