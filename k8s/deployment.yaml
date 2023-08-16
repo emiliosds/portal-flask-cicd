@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: portal-flask
-          image: emiliosds/portal-flask:alpine
+          image: emiliosds/portal-flask:main
           ports:
             - containerPort: 5000
           envFrom:
